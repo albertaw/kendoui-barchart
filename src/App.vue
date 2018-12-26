@@ -26,8 +26,13 @@ export default {
     return {
       series: [{
         type: 'column',
-        name: 'Close',
-        field: 'close'
+        name: 'Low',
+        field: 'low'
+      },
+      {
+        type: 'column',
+        name: 'High',
+        field: 'high'
       }],
       categoryAxis: {
         field: 'label'
