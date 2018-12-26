@@ -10,7 +10,7 @@
       :title-text="'Amazon Stock Prices'"
       :legend-position="'bottom'"
       :tooltip-visible="true"
-      :tooltip-template="'#: series.name #: $#: value #'"
+      :tooltip-template="'$#: value.from # - $#: value.to #'"
       :theme="'material'"
       :series="series"
       :category-axis="categoryAxis"
@@ -25,14 +25,10 @@ export default {
   data () {
     return {
       series: [{
-        type: 'column',
-        name: 'Low',
-        field: 'low'
-      },
-      {
-        type: 'column',
-        name: 'High',
-        field: 'high'
+        type: 'rangeColumn',
+        name: 'High and Low',
+        fromField: 'low',
+        toField: 'high'
       }],
       categoryAxis: {
         field: 'label'
